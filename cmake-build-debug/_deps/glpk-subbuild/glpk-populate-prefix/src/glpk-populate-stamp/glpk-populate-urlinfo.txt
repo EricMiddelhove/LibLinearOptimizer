@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake;-P;/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/glpk-subbuild/glpk-populate-prefix/src/glpk-populate-stamp/download-glpk-populate.cmake;COMMAND;/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake;-P;/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/glpk-subbuild/glpk-populate-prefix/src/glpk-populate-stamp/verify-glpk-populate.cmake;COMMAND;/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake;-P;/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/glpk-subbuild/glpk-populate-prefix/src/glpk-populate-stamp/extract-glpk-populate.cmake
+source_dir=/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/glpk-src
+work_dir=/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps
+url(s)=https://ftp.gnu.org/gnu/glpk/glpk-5.0.tar.gz
+hash=
+no_extract=
+

@@ -1,0 +1,22 @@
+# ninja log v5
+1375	1678	1717762573022690867	/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests[1]_tests.cmake	4f6634ba4940a977
+1423	1440	1717766676479104000	lib/libgtest_main.a	d369228b4877e58d
+1375	1678	1717762573022690867	lib_tests	4f6634ba4940a977
+7	897	1717766675929908930	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	34efc7a3f1d0ca11
+1444	1461	1717766676500278000	lib/libgmock_main.a	b1fe87bb6e4bff8f
+1375	1678	1717762573022690867	lib_tests[1]_tests.cmake	4f6634ba4940a977
+7	1391	1717766676422661043	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	966a650d3d41d51f
+7	501	1717766675535410194	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	c3382a3d402d1d02
+1392	1423	1717766676462308000	lib/libgtest.a	72c5846e50d5e806
+7	629	1717766675662935193	CMakeFiles/lib_tests.dir/lib_tests.cpp.o	6f1242c444c0fe10
+2	268	1717768586683861343	build.ninja	aac4b62f34299204
+1	7	0	clean	ad90e366ad70d77b
+1423	1444	1717766676482820000	lib/libgmock.a	4ae1bd920b4ce0ba
+382	409	1717766675447951000	libMHP_LibLinearOptimizer.a	6cf63d67bffdd6c
+7	599	1717766675632277169	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	7ba22de83bf8c983
+6	382	1717766675415714064	CMakeFiles/MHP_LibLinearOptimizer.dir/library.cpp.o	4ac7e61665ba70eb
+6	43	1717766675080462692	CMakeFiles/MHP_LibLinearOptimizer.dir/ElectricalVehicle.cpp.o	3b44010342d34339
+1	229	1717768586683861343	build.ninja	aac4b62f34299204
+6	269	1717768586960717449	lib_tests	43639a883ff9b2b3
+6	269	1717768586960717449	lib_tests[1]_tests.cmake	43639a883ff9b2b3
+6	269	1717768586960717449	/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests[1]_tests.cmake	43639a883ff9b2b3

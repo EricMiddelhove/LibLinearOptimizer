@@ -1,0 +1,12 @@
+OptimizerTest.NameIntegrity 2 0.00126556
+OptimizerTest.GlobalMaximumPowerConsumptionConstraint 2 0.0063559
+OptimizerTest.BatteryCapacityReachedConstraint 2 0.00138654
+OptimizerTest.ReachSoCInTimeConstraint 2 0.00134198
+OptimizerTest.BuildModel 2 0.0450615
+OptimizerTest.GenerateCoefficientArray 2 0.00132031
+ExecutionTest.executeOptimised 2 0.00133013
+ExecutionTest.executeNotOptimised 2 0.00137419
+ExecutionTest.Return10OnNoSolution 2 0.00152056
+ExecutionTest.DoesNotChargeFullVehicles 0 0
+---
+ExecutionTest.DoesNotChargeFullVehicles

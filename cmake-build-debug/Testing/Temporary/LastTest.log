@@ -1,0 +1,288 @@
+Start testing: Jun 07 15:57 CEST
+----------------------------------------------------------
+1/10 Testing: OptimizerTest.NameIntegrity
+1/10 Test: OptimizerTest.NameIntegrity
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=OptimizerTest.NameIntegrity" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"OptimizerTest.NameIntegrity" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OptimizerTest.NameIntegrity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OptimizerTest
+[ RUN      ] OptimizerTest.NameIntegrity
+[       OK ] OptimizerTest.NameIntegrity (0 ms)
+[----------] 1 test from OptimizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"OptimizerTest.NameIntegrity" end time: Jun 07 15:57 CEST
+"OptimizerTest.NameIntegrity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/10 Testing: OptimizerTest.GlobalMaximumPowerConsumptionConstraint
+2/10 Test: OptimizerTest.GlobalMaximumPowerConsumptionConstraint
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=OptimizerTest.GlobalMaximumPowerConsumptionConstraint" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"OptimizerTest.GlobalMaximumPowerConsumptionConstraint" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OptimizerTest.GlobalMaximumPowerConsumptionConstraint
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OptimizerTest
+[ RUN      ] OptimizerTest.GlobalMaximumPowerConsumptionConstraint
+[       OK ] OptimizerTest.GlobalMaximumPowerConsumptionConstraint (10 ms)
+[----------] 1 test from OptimizerTest (10 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (10 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"OptimizerTest.GlobalMaximumPowerConsumptionConstraint" end time: Jun 07 15:57 CEST
+"OptimizerTest.GlobalMaximumPowerConsumptionConstraint" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/10 Testing: OptimizerTest.BatteryCapacityReachedConstraint
+3/10 Test: OptimizerTest.BatteryCapacityReachedConstraint
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=OptimizerTest.BatteryCapacityReachedConstraint" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"OptimizerTest.BatteryCapacityReachedConstraint" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OptimizerTest.BatteryCapacityReachedConstraint
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OptimizerTest
+[ RUN      ] OptimizerTest.BatteryCapacityReachedConstraint
+[       OK ] OptimizerTest.BatteryCapacityReachedConstraint (0 ms)
+[----------] 1 test from OptimizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"OptimizerTest.BatteryCapacityReachedConstraint" end time: Jun 07 15:57 CEST
+"OptimizerTest.BatteryCapacityReachedConstraint" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/10 Testing: OptimizerTest.ReachSoCInTimeConstraint
+4/10 Test: OptimizerTest.ReachSoCInTimeConstraint
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=OptimizerTest.ReachSoCInTimeConstraint" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"OptimizerTest.ReachSoCInTimeConstraint" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OptimizerTest.ReachSoCInTimeConstraint
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OptimizerTest
+[ RUN      ] OptimizerTest.ReachSoCInTimeConstraint
+[       OK ] OptimizerTest.ReachSoCInTimeConstraint (0 ms)
+[----------] 1 test from OptimizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"OptimizerTest.ReachSoCInTimeConstraint" end time: Jun 07 15:57 CEST
+"OptimizerTest.ReachSoCInTimeConstraint" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/10 Testing: OptimizerTest.BuildModel
+5/10 Test: OptimizerTest.BuildModel
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=OptimizerTest.BuildModel" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"OptimizerTest.BuildModel" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OptimizerTest.BuildModel
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OptimizerTest
+[ RUN      ] OptimizerTest.BuildModel
+evSize: 500
+219 Cols 48000
+[       OK ] OptimizerTest.BuildModel (87 ms)
+[----------] 1 test from OptimizerTest (87 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (87 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"OptimizerTest.BuildModel" end time: Jun 07 15:57 CEST
+"OptimizerTest.BuildModel" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/10 Testing: OptimizerTest.GenerateCoefficientArray
+6/10 Test: OptimizerTest.GenerateCoefficientArray
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=OptimizerTest.GenerateCoefficientArray" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"OptimizerTest.GenerateCoefficientArray" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OptimizerTest.GenerateCoefficientArray
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OptimizerTest
+[ RUN      ] OptimizerTest.GenerateCoefficientArray
+[       OK ] OptimizerTest.GenerateCoefficientArray (0 ms)
+[----------] 1 test from OptimizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"OptimizerTest.GenerateCoefficientArray" end time: Jun 07 15:57 CEST
+"OptimizerTest.GenerateCoefficientArray" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/10 Testing: ExecutionTest.executeOptimised
+7/10 Test: ExecutionTest.executeOptimised
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=ExecutionTest.executeOptimised" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"ExecutionTest.executeOptimised" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ExecutionTest.executeOptimised
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutionTest
+[ RUN      ] ExecutionTest.executeOptimised
+evSize: 2
+219 Cols 192
+[       OK ] ExecutionTest.executeOptimised (0 ms)
+[----------] 1 test from ExecutionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ExecutionTest.executeOptimised" end time: Jun 07 15:57 CEST
+"ExecutionTest.executeOptimised" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/10 Testing: ExecutionTest.executeNotOptimised
+8/10 Test: ExecutionTest.executeNotOptimised
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=ExecutionTest.executeNotOptimised" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"ExecutionTest.executeNotOptimised" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ExecutionTest.executeNotOptimised
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutionTest
+[ RUN      ] ExecutionTest.executeNotOptimised
+evSize: 2
+219 Cols 192
+[       OK ] ExecutionTest.executeNotOptimised (0 ms)
+[----------] 1 test from ExecutionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ExecutionTest.executeNotOptimised" end time: Jun 07 15:57 CEST
+"ExecutionTest.executeNotOptimised" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/10 Testing: ExecutionTest.Return10OnNoSolution
+9/10 Test: ExecutionTest.Return10OnNoSolution
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=ExecutionTest.Return10OnNoSolution" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"ExecutionTest.Return10OnNoSolution" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ExecutionTest.Return10OnNoSolution
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutionTest
+[ RUN      ] ExecutionTest.Return10OnNoSolution
+evSize: 2
+219 Cols 192
+No solution! 
+Writing problem data to 'problem.txt'...
+360 lines were written
+[       OK ] ExecutionTest.Return10OnNoSolution (0 ms)
+[----------] 1 test from ExecutionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ExecutionTest.Return10OnNoSolution" end time: Jun 07 15:57 CEST
+"ExecutionTest.Return10OnNoSolution" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/10 Testing: ExecutionTest.DoesNotChargeFullVehicles
+10/10 Test: ExecutionTest.DoesNotChargeFullVehicles
+Command: "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/lib_tests" "--gtest_filter=ExecutionTest.DoesNotChargeFullVehicles" "--gtest_also_run_disabled_tests"
+Directory: /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug
+"ExecutionTest.DoesNotChargeFullVehicles" start time: Jun 07 15:57 CEST
+Output:
+----------------------------------------------------------
+Running main() from /Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ExecutionTest.DoesNotChargeFullVehicles
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutionTest
+[ RUN      ] ExecutionTest.DoesNotChargeFullVehicles
+evSize: 4
+219 Cols 384
+No solution! 
+Writing problem data to 'problem.txt'...
+713 lines were written
+/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/lib_tests.cpp:415: Failure
+Expected equality of these values:
+  0
+  result
+    Which is: 10
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"ExecutionTest.DoesNotChargeFullVehicles" end time: Jun 07 15:57 CEST
+"ExecutionTest.DoesNotChargeFullVehicles" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 07 15:57 CEST
