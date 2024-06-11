@@ -1,0 +1,5 @@
+if(EXISTS "/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-release/lib_tests[1]_tests.cmake")
+  include("/Users/ericmiddelhove/Development/MHP-LibLinearOptimizer/cmake-build-release/lib_tests[1]_tests.cmake")
+else()
+  add_test(lib_tests_NOT_BUILT lib_tests_NOT_BUILT)
+endif()
