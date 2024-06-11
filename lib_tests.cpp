@@ -384,9 +384,7 @@ namespace {
         const int arrival_interval = 96;
         ElectricalVehicle arr[length] = {
                 ElectricalVehicle(5, 100, 300, 100, 100, 8, arrival_interval, "Full Car 0"),
-                ElectricalVehicle(5, 80, 300, 80, 80, 8, arrival_interval, "Full Car 1"),
-                ElectricalVehicle(5, 100, 300, 83, 80, 8, arrival_interval, "Full Car 2"),
-                ElectricalVehicle(5, 100, 300, 103, 100, 8, arrival_interval, "Full Car 3")
+                ElectricalVehicle(5, 80, 300, 80, 80, 8, arrival_interval, "Full Car 1")
         };
 
         const int power_arr[] = {40, 15, 20, 15, 20, 20, 15, 5, 15, 15, 20, 50, 15, 20, 15, 20, 15, 15, 15, 15, 20, 50,
