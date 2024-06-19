@@ -54,9 +54,9 @@ void ElectricalVehicle::log(){
     printf("EV {");
     printf("minimumChargingPower: %d\t", minimumChargingPower);
     printf("maximumChargingPower: %d\t", maximumChargingPower);
-    printf("batteryContent: %d\t", batteryContent);
+    printf("batteryContent: %lu\t", batteryContent);
     printf("batteryCapacity: %lu\t", batteryCapacity);
-    printf("batteryTargetCapacity: %d\t", batteryTargetCapacity);
+    printf("batteryTargetCapacity: %lu\t", batteryTargetCapacity);
     printf("intervalsStaying: %d\t", (int) intervals_staying);
     printf("arrivalInterval %zu\t", arrival_interval);
     printf("name: %s", name);

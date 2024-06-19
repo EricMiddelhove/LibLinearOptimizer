@@ -43,7 +43,7 @@ namespace {
         virtual void SetUp() {
 
             for (int i = 0; i < 500; i++) {
-                ElectricalVehicle *ev = new ElectricalVehicle(5, 27, 93.7, 0, 100, 8, arrival_interval,
+                ElectricalVehicle *ev = new ElectricalVehicle(5, 27, 93, 0, 100, 8, arrival_interval,
                                                               "Taycan"); // Porsche Taycan Turbo S
                 EVs.push_back(ev);
             }
@@ -86,7 +86,7 @@ namespace {
         char name[64] = "Taycan";
 
         // Do
-        ElectricalVehicle ev = ElectricalVehicle(5, 27, 93.7, 0, 100, 8, arrival_interval, name);
+        ElectricalVehicle ev = ElectricalVehicle(5, 27, 93, 0, 100, 8, arrival_interval, name);
 
         // Check
 
@@ -114,7 +114,7 @@ namespace {
 
 
         // Do
-        addGlobalMaximumPowerConsumptionConstraint(problem, &EVs, &ia, &ja, &ar, &constraintCount,
+        addGlobalMaximumPowerConsumptionConstraint(*problem, EVs, ia, ja, ar, constraintCount,
                                                    optimisation_frame_size, dynamic_consumption, pvPower,
                                                    baseBuildingCapacity);
 
@@ -147,7 +147,7 @@ namespace {
 
 
 // Do
-        addTargetBatteryCapacityReachedConstraint(problem, &EVs, &ia, &ja, &ar, &constraintCount, arrival_interval,
+        addTargetBatteryCapacityReachedConstraint(*problem, EVs, ia, ja, ar, constraintCount, arrival_interval,
                                                   AMOUNT_COLS, 15);
 
 // Check
@@ -183,7 +183,7 @@ namespace {
         const size_t AMOUNT_ROWS = EVs.size() * AMOUNT_COLS;
 
         // Do
-        addReachSOCinTimeConstraint(problem, &EVs, &ia, &ja, &ar, &constraintCount, arrival_interval, AMOUNT_COLS, 15);
+        addReachSOCinTimeConstraint(*problem, EVs, ia, ja, ar, constraintCount, arrival_interval, AMOUNT_COLS, 15);
 
         // Setup Check
         vector<int> compare_ia = vector<int>();
@@ -234,7 +234,7 @@ namespace {
         glp_prob *prob = glp_create_prob();
 
         // Do
-        buildModel(prob, &EVs, optimisation_frame_size, dynamicConsumption, coefficients, 15, pvPower,
+        buildModel(*prob, EVs, optimisation_frame_size, dynamicConsumption, coefficients, 15, pvPower,
                    baseBuildingCapacity);
 
         // Check
@@ -328,7 +328,6 @@ namespace {
         int baseMaxBuildingCapacity = 250000;
 
     };
-
 
     TEST_F(ExecutionTest, executeOptimised) {
         //    printf("\nexecuteOptimised");

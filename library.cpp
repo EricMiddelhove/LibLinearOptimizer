@@ -56,9 +56,9 @@ void generateCoefficientArray(double coeffArray[], size_t arraySize, vector<doub
 }
 
 // Constraints
-void addPowerForEachVehicleConstraint(glp_prob* problem, vector<ElectricalVehicle*>* EVs, vector<int>* ia, vector<int>* ja, vector<double>* ar, size_t* constraintCount, size_t AMOUNT_COLS, size_t AMOUNT_OF_15_MINUTES) {
+void addPowerForEachVehicleConstraint(glp_prob& problem, vector<ElectricalVehicle*>& EVs, vector<int>& ia, vector<int>& ja, vector<double>& ar, size_t& constraintCount, size_t AMOUNT_COLS, size_t AMOUNT_OF_15_MINUTES) {
 
-    for (int i = 0; i < EVs->size(); i++){
+    for (int i = 0; i < EVs.size(); i++){
 
         for(int j = 0; j < AMOUNT_OF_15_MINUTES; j++){
             int index = i * AMOUNT_OF_15_MINUTES + j + 1;
@@ -70,11 +70,11 @@ void addPowerForEachVehicleConstraint(glp_prob* problem, vector<ElectricalVehicl
 
             // EVs->at(i)->log();
 
-            glp_set_col_name(problem, index, varname.c_str());
-            if ((double) EVs->at(i)->maximumChargingPower == 0.0 ) {
-                glp_set_col_bnds(problem, index, GLP_FX, 0, 0);
+            glp_set_col_name(&problem, index, varname.c_str());
+            if ((double) EVs.at(i)->maximumChargingPower == 0.0 ) {
+                glp_set_col_bnds(&problem, index, GLP_FX, 0, 0);
             }else{
-                glp_set_col_bnds(problem, index, GLP_DB, 0, (double) EVs->at(i)->maximumChargingPower);
+                glp_set_col_bnds(&problem, index, GLP_DB, 0, (double) EVs.at(i)->maximumChargingPower);
             }
         }
 
@@ -83,10 +83,10 @@ void addPowerForEachVehicleConstraint(glp_prob* problem, vector<ElectricalVehicl
     return;
 }
 
-void addGlobalMaximumPowerConsumptionConstraint(glp_prob* problem, vector<ElectricalVehicle*>* EVs, vector<int>* ia, vector<int>* ja, vector<double>* ar, size_t* constraintCounter, size_t optimisationFrameSize, const int dynamicConsumption[], const double pvPower[], const int baseBuildingCapacity) {
-    size_t evSize = EVs->size();
+void addGlobalMaximumPowerConsumptionConstraint(glp_prob& problem, vector<ElectricalVehicle*>& EVs, vector<int>& ia, vector<int>& ja, vector<double>& ar, size_t& constraintCounter, size_t optimisationFrameSize, const int dynamicConsumption[], const double pvPower[], const int baseBuildingCapacity) {
+    size_t evSize = EVs.size();
 
-    glp_add_rows(problem, optimisationFrameSize);
+    glp_add_rows(&problem, optimisationFrameSize);
 
     // Maximum power consumption constraint -> Sum of all charging-processes must not exceed maximum building capacity per timeframe
 
@@ -94,48 +94,48 @@ void addGlobalMaximumPowerConsumptionConstraint(glp_prob* problem, vector<Electr
         string varname = "gloMaxPowCons";
         varname.append(to_string(j));
 
-        *constraintCounter = *constraintCounter + 1;
-        glp_set_row_name(problem, (int) *constraintCounter, varname.c_str());
+        constraintCounter = constraintCounter + 1;
+        glp_set_row_name(&problem, (int) constraintCounter, varname.c_str());
 
         int currentBuildingCapacity = getCurrentBuildingCapacity(pvPower, dynamicConsumption, baseBuildingCapacity, j - 1);
 
 //    printf("%d\n", currentBuildingCapacity);
 
-        glp_set_row_bnds(problem, (int) *constraintCounter, GLP_UP, currentBuildingCapacity, currentBuildingCapacity);
+        glp_set_row_bnds(&problem, (int) constraintCounter, GLP_UP, currentBuildingCapacity, currentBuildingCapacity);
 
         for (int i = 0; i < evSize; i++) {
-            ia->push_back((int) *constraintCounter);
-            ja->push_back(j + i * (int)optimisationFrameSize);
-            ar->push_back(1.0);
+            ia.push_back((int) constraintCounter);
+            ja.push_back(j + i * (int)optimisationFrameSize);
+            ar.push_back(1.0);
         }
     }
 }
 
-void addTargetBatteryCapacityReachedConstraint(glp_prob* problem, vector<ElectricalVehicle*>* EVs, vector<int>* ia, vector<int>* ja, vector<double>* ar, size_t* constraintCounter, size_t AMOUNT_OF_15_MINUTES, size_t AMOUNT_COLS, const int intervalDuration) {
-    size_t evSize = EVs->size();
+void addTargetBatteryCapacityReachedConstraint(glp_prob& problem, vector<ElectricalVehicle*>& EVs, vector<int>& ia, vector<int>& ja, vector<double>& ar, size_t& constraintCounter, size_t AMOUNT_OF_15_MINUTES, size_t AMOUNT_COLS, const int intervalDuration) {
+    size_t evSize = EVs.size();
 
-    glp_add_rows(problem, evSize);
+    glp_add_rows(&problem, evSize);
 
     for (int i = 0; i < evSize; i++) {
         string varname = "targCapReached";
         varname.append(to_string(i));
 
-        *constraintCounter = *constraintCounter + 1;
-        glp_set_row_name(problem, (int) *constraintCounter, varname.c_str());
+        constraintCounter = constraintCounter + 1;
+        glp_set_row_name(&problem, (int) constraintCounter, varname.c_str());
 
-        unsigned long remainingKWinBattery = EVs->at(i)->batteryContent;
+        unsigned long remainingKWinBattery = EVs.at(i)->batteryContent;
 
-        unsigned long targetCapacity = EVs->at(i)->batteryTargetCapacity;
+        unsigned long targetCapacity = EVs.at(i)->batteryTargetCapacity;
 
         double intervals_in_one_hour = 60 / intervalDuration;
 
         int chargingDiff = targetCapacity - remainingKWinBattery;
         if(chargingDiff <= 0){
             chargingDiff = 0;
-            glp_set_row_bnds(problem, (int) *constraintCounter, GLP_FX, 0.0, 0.0);  // Target SoC 100%
+            glp_set_row_bnds(&problem, (int) constraintCounter, GLP_FX, 0.0, 0.0);  // Target SoC 100%
 
         }else{
-            glp_set_row_bnds(problem, (int) *constraintCounter, GLP_LO, chargingDiff * intervals_in_one_hour, 0.0);  // Target SoC 100%
+            glp_set_row_bnds(&problem, (int) constraintCounter, GLP_LO, chargingDiff * intervals_in_one_hour, 0.0);  // Target SoC 100%
         }
 
 
@@ -144,32 +144,32 @@ void addTargetBatteryCapacityReachedConstraint(glp_prob* problem, vector<Electri
 
         for (int j = 1; j <= AMOUNT_COLS; j++) {
             if (j > lowerBound && j <= upperBound) {
-                ja->push_back(j);
-                ia->push_back((int) *constraintCounter);
-                ar->push_back(1);
+                ja.push_back(j);
+                ia.push_back((int) constraintCounter);
+                ar.push_back(1);
             }
         }
     }
 }
 
-void addReachSOCinTimeConstraint(glp_prob* problem, vector<ElectricalVehicle*>* EVs, vector<int>* ia, vector<int>* ja, vector<double>* ar, size_t* constraintCounter, size_t AMOUNT_OF_15_MINUTES, size_t AMOUNT_COLS, const int intervalDuration) {
-    size_t evSize = EVs->size();
+void addReachSOCinTimeConstraint(glp_prob& problem, vector<ElectricalVehicle*>& EVs, vector<int>& ia, vector<int>& ja, vector<double>& ar, size_t& constraintCounter, size_t AMOUNT_OF_15_MINUTES, size_t AMOUNT_COLS, const int intervalDuration) {
+    size_t evSize = EVs.size();
 
     for (int i = 0; i < evSize; i++) {
 
-        if (EVs->at(i)->intervals_staying == 0){
+        if (EVs.at(i)->intervals_staying == 0){
             continue;
         }
 
-        glp_add_rows(problem, 1);
+        glp_add_rows(&problem, 1);
         string varname = "socInTime";
         varname.append(to_string(i));
 
-        *constraintCounter = *constraintCounter + 1;
-        glp_set_row_name(problem, (int) *constraintCounter, varname.c_str());
+        constraintCounter = constraintCounter + 1;
+        glp_set_row_name(&problem, (int) constraintCounter, varname.c_str());
 
-        unsigned long remainingKWinBattery = EVs->at(i)->batteryContent;
-        unsigned long targetCapacity = EVs->at(i)->batteryTargetCapacity;
+        unsigned long remainingKWinBattery = EVs.at(i)->batteryContent;
+        unsigned long targetCapacity = EVs.at(i)->batteryTargetCapacity;
 
         unsigned long chargingDiff = targetCapacity - remainingKWinBattery;
 
@@ -177,33 +177,33 @@ void addReachSOCinTimeConstraint(glp_prob* problem, vector<ElectricalVehicle*>* 
 
         if(chargingDiff <= 0){
             chargingDiff = 0;
-            glp_set_row_bnds(problem, (int) *constraintCounter, GLP_FX, 0.0, 0.0);
+            glp_set_row_bnds(&problem, (int) constraintCounter, GLP_FX, 0.0, 0.0);
         }else{
-            glp_set_row_bnds(problem, (int) *constraintCounter, GLP_LO, chargingDiff * intervals_in_one_hour, 0.0);
+            glp_set_row_bnds(&problem, (int) constraintCounter, GLP_LO, chargingDiff * intervals_in_one_hour, 0.0);
         }
 
 
-        int lowerBound = EVs->at(i)->arrival_interval + i * AMOUNT_OF_15_MINUTES;
+        int lowerBound = EVs.at(i)->arrival_interval + i * AMOUNT_OF_15_MINUTES;
 
-        int upperBound = getIntervalNumberOfLeaving(lowerBound, EVs->at(i)->intervals_staying, intervalDuration);
+        int upperBound = getIntervalNumberOfLeaving(lowerBound, EVs.at(i)->intervals_staying, intervalDuration);
 
         for (int j = 1; j <= AMOUNT_COLS; j++) {
             if (j > lowerBound && j <= upperBound) {
-                ja->push_back(j);
-                ia->push_back((int) *constraintCounter);
-                ar->push_back(1);
+                ja.push_back(j);
+                ia.push_back((int) constraintCounter);
+                ar.push_back(1);
             }
         }
     }
 }
 
 // GLPK MODEL
-void buildModel(glp_prob* problem, vector<ElectricalVehicle*>* EVs, const int optimisation_frame_size, const int dynamicConsumption[], double coefficients[], const int intervalDuration, const double pvPower[], const int baseBuildingCapacity) {
-    const size_t evSize = EVs->size();
+void buildModel(glp_prob& problem, vector<ElectricalVehicle*>& EVs, const int optimisation_frame_size, const int dynamicConsumption[], double coefficients[], const int intervalDuration, const double pvPower[], const int baseBuildingCapacity) {
+    const size_t evSize = EVs.size();
 
-    const size_t AMOUNT_COLS = optimisation_frame_size * evSize;
+    const size_t amountCols = optimisation_frame_size * evSize;
     printf("evSize: %zu\n", evSize);
-    // const size_t AMOUNT_ROWS = AMOUNT_COLS + (AMOUNT_COLS / evSize) + evSize + evSize;
+    // const size_t AMOUNT_ROWS = amountCols + (amountCols / evSize) + evSize + evSize;
 
     vector<int> ia;
     vector<int> ja;
@@ -213,34 +213,34 @@ void buildModel(glp_prob* problem, vector<ElectricalVehicle*>* EVs, const int op
     ja.push_back(0);
     ar.push_back(0);
 
-    glp_set_prob_name(problem, "optimizer model");
-    glp_set_obj_dir(problem, GLP_MIN);
+    glp_set_prob_name(&problem, "optimizer model");
+    glp_set_obj_dir(&problem, GLP_MIN);
 
     // auto start = high_resolution_clock::now();
 
-    printf("219 Cols %d\n", (int) AMOUNT_COLS);
-    glp_add_cols(problem, (int) AMOUNT_COLS);  // Variables
+    printf("219 Cols %d\n", (int) amountCols);
+    glp_add_cols(&problem, (int) amountCols);  // Variables
 
     size_t amountOfConstraints = 0;
 
     // power for each vehicle constraint
-    addPowerForEachVehicleConstraint(problem, EVs, &ia, &ja, &ar, &amountOfConstraints, AMOUNT_COLS, optimisation_frame_size);
+    addPowerForEachVehicleConstraint(problem, EVs, ia, ja, ar, amountOfConstraints, amountCols, optimisation_frame_size);
 
     // Maximum power consumption constraint
-    addGlobalMaximumPowerConsumptionConstraint(problem, EVs, &ia, &ja, &ar, &amountOfConstraints, optimisation_frame_size, dynamicConsumption, pvPower, baseBuildingCapacity);
+    addGlobalMaximumPowerConsumptionConstraint(problem, EVs, ia, ja, ar, amountOfConstraints, optimisation_frame_size, dynamicConsumption, pvPower, baseBuildingCapacity);
 
     // Max Capacity is reached constraint
-    addTargetBatteryCapacityReachedConstraint(problem, EVs, &ia, &ja, &ar, &amountOfConstraints, optimisation_frame_size, AMOUNT_COLS, intervalDuration);
+    addTargetBatteryCapacityReachedConstraint(problem, EVs, ia, ja, ar, amountOfConstraints, optimisation_frame_size, amountCols, intervalDuration);
 
     // Reach SoC in time constraint
-    addReachSOCinTimeConstraint(problem, EVs, &ia, &ja, &ar, &amountOfConstraints, optimisation_frame_size, AMOUNT_COLS, intervalDuration);
+    addReachSOCinTimeConstraint(problem, EVs, ia, ja, ar, amountOfConstraints, optimisation_frame_size, amountCols, intervalDuration);
 
-    glp_load_matrix(problem, (int) ar.size() - 1, ia.data(), ja.data(), ar.data());
+    glp_load_matrix(&problem, (int) ar.size() - 1, ia.data(), ja.data(), ar.data());
 
-    for (int i = 0; i < AMOUNT_COLS; i++) {
+    for (int i = 0; i < amountCols; i++) {
         int coeff_index = (i % optimisation_frame_size);
         double coefficient = coefficients[coeff_index];
-        glp_set_obj_coef(problem, i + 1, coefficient);
+        glp_set_obj_coef(&problem, i + 1, coefficient);
     }
 
 }
@@ -302,7 +302,7 @@ char optimise(ElectricalVehicle EV_arr[], size_t evCount, unsigned short emissio
 
     glp_prob* problem = glp_create_prob(); // Alloc
 
-    buildModel(problem, &EVs, optimisationFrameSize, dynamicConsumption, coeffArray, intervalDuration, pvPowerRooftop_arr, baseMaxBuildingCapacity);
+    buildModel(*problem, EVs, optimisationFrameSize, dynamicConsumption, coeffArray, intervalDuration, pvPowerRooftop_arr, baseMaxBuildingCapacity);
 
     glp_smcp parameters;
     glp_init_smcp(&parameters);
