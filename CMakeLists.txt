@@ -1,11 +1,19 @@
 cmake_minimum_required(VERSION 3.28)
 project(MHP_LibLinearOptimizer)
 include(FetchContent)
+include(ExternalProject)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories("/usr/local/include")
 link_directories("/usr/local/lib")
+
+ExternalProject_Add(glpk
+        URL https://ftp.gnu.org/gnu/glpk/glpk-5.0.tar.gz
+        SOURCE_DIR glpk-src
+        CONFIGURE_COMMAND ${CMAKE_CURRENT_BINARY_DIR}/glpk-src/configure --disable-shared
+        BUILD_COMMAND make
+)
 
 add_library(MHP_LibLinearOptimizer STATIC library.cpp
         ElectricalVehicle.h
@@ -14,7 +22,7 @@ add_library(MHP_LibLinearOptimizer STATIC library.cpp
 target_link_libraries(
         MHP_LibLinearOptimizer
         PRIVATE
-        /usr/local/lib/libglpk.a
+        ${CMAKE_CURRENT_BINARY_DIR}/glpk-prefix/src/glpk-build/src/.libs/libglpk.a
 )
 
 # Automatic testing
